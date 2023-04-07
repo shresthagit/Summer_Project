@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact</title>
+        <link rel="stylesheet" href="/static/app/css/style1.css">
+        <script type="text/javascript">
+          function validate(){
+            name=document.frm.uname.value;
+            email=document.frm.email.value;
+            phone=document.frm.phone.value;
+            address=document.frm.add.value;
+            var p=/^(98[0-9]{8})$/;
+            var a=" ";
+            var e=/^([A-Za-z0-9_]+@[A-za-z]+\.[a-zA-Z]{2,3})$/;
+            // var empty= document.frm.value;
+            //   if (empty === ""){
+            //     alert("Please Fill up all fields");
+            //         return false;
+            //     }
+            // else{
+            if(name==""){
+                alert ("Name cannot be empty");
+                return false;
+              }
+              
+              if(address==""){
+                alert("Address is empty");
+                return false;
+              }
+              if(email==""){
+                alert("Type your email id");
+                return false;
+              }
+              if(!email.match(e)){
+      
+                alert("Email id you provided is not valid.");
+                return false;
+              }
+      
+      
+              if(phone==""&& phone ==[0-9]){
+                alert("Please palce your phone number here.");
+                return false;
+              }
+              if(!phone.match(p)){
+      
+                alert("Enter number starting from 98... and length should be 10.");
+                return false;
+              }
+      
+      
+          }
+        </script>
+       
+    </head>
+<body>
+  
+    <div class="container">
+        <h1 class="text-center">Contact Us</h1>
+        <form name="frm" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+            
+              <input type="text" class="form-control" id="bname" name="uname" >
+                
+            </div>
+           
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="Contactnumber" name="email" ">
+                
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Address</label>
+                <input type="text" class="form-control" id="Starttime" name="add">
+                
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" id="endtime" name="phone">
+                
+              </div>
+         
+            <button type="submit"  name="submit" class="btn btn-primary" onclick="validate()">Submit </button>
+          </form>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}  

@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Niwaran Polyclinic Pvt Ltd.</title>
+
+  
+<link href="{% static 'app/css/bootstrap.min.css' %}" rel="stylesheet">
+  
+<link href="{% static 'app/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+          <i class="bi bi-envelope"></i> <a href="">niwaranployclinic2.com</a>
+        <i class="bi bi-phone"></i> 01-44665278
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <!--End of Top Bar-->
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/">Niwaran Polyclinic</a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          {% if request.user.is_authenticated %}
+            <li>{{ request.user.username }}</li>
+          {% endif %}
+
+          <li><a class="nav-link scrollto active" href="/" name="home">Home</a></li>
+          <li><a class="nav-link scrollto" href="/services">Services</a></li>
+          <li><a class="nav-link scrollto" href="/doctors">Doctors</a></li>
+          <li><a class="nav-link scrollto" href="/contact">Contact Us</a></li>
+          {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+              <li><a class="nav-link scrollto" href="/report">Report</a></li>   
+              <li><a class="nav-link scrollto" href="/dashboard">Dashboard</a></li>   
+            {% endif %}
+
+            <li><a class="nav-link scrollto" href="/logout">!Logout</a></li>
+          {% else %}
+            <li><a class="nav-link scrollto" href="/Login">Login</a></li>
+            <li><a class="nav-link scrollto" href="/signup">Signup</a></li>
+          {% endif %}
+
+
+        </ul>
+      </nav>
+
+      {% if not request.user.is_superuser %}
+      <a href="/appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+      {% endif %}
+
+
+    </div>
+  </header>
+
+{% block content %}
+
+{% endblock %}
+    
+
+    <!-- footer -->
+   <div class="b-example-divider"></div>
+
+    <div class="container">
+      <footer class="py-3 my-4">
+        <p class="text-center ">&copy; 2022 Company, Inc</p>
+      </footer>
+    </div> 
+       
+    
+        <!-- footer -->
+  </body>
+  </html>    

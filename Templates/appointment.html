@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<html>
+  <head>
+<h1>_____________________________________________________________</h1>
+<script type="text/javascript">
+  function validates(){
+    name=document.frm1.name.value;
+    service=document.frm1.service.value;
+    message=document.frm1.message.value;
+    address=document.frm1.add.value;
+    var p=/^(98[0-9]{8})$/;
+    var a=" ";
+    var e=/^([A-Za-z0-9_]+@[A-za-z]+\.[a-zA-Z]{2,3})$/;
+      if(name.match(e)){
+        alert ("Name cannot be empty");
+        return false;
+      }
+      if(service==""){
+        alert("Please Select Service");
+        return fasle;
+      }
+     
+      if(message==""){
+        alert("Leave some message");
+        return false;
+      }
+      
+      }
+
+  
+</script>
+</head>
+<body>
+<!-- ======= Appointment Section ======= -->
+<section id="appointment" class="appointment section-bg">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Make an Appointment</h2>
+        <p>If you want to make the appointment,
+          Fill the form below.</p>
+      </div>
+
+      <form action="" name="frm1" method="post" role="form">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-4 form-group">
+            <label>Name</label><input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <div class="validate"></div>
+          </div>
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+            <label>Service</label><select name="service" id="service" class="form-select">
+              <option value="">Select Services</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="Gynaecology">Gynaecology</option>
+              <option value="Othalmology">Othalmology</option>
+              <option value="Cancer Contultant">Cancer Contultant</option>
+              <option value="Gastro Contultant">Gastro Contultant</option>
+              <option value="Surgery Contultant">Surgery Contultant</option>
+              <option value="Orthopaedic">Orthopaedic</option>
+              <option value="Surgery">Surgery</option>
+              
+            </select>
+            <div class="validate"></div>
+          </div>
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+          <label>Time</label>  <input type="time" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <div class="validate"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 form-group mt-3">
+           <label>Date</label> <input type="date" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <div class="validate"></div>
+          </div>
+          
+          </div>
+          <!-- <div class="col-md-4 form-group mt-3">
+            <select name="doctor" id="doctor" class="form-select">
+              <option value="">Select Doctor</option>
+              <option value="Doctor 1">Dr.Shreekrishna Shrestha</option>
+              <option value="Doctor 2">Dr. Tina </option>
+              <option value="Doctor 3">Dr. Suwal</option>
+            </select>
+            <div class="validate"></div>
+          </div>
+        </div> -->
+
+        <div class="form-group mt-3">
+          <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+          <div class="validate"></div>
+        </div>
+        <div class="mb-3">
+          <div class="loading"></div>
+          <div class="error-message"></div>
+          <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+        </div>
+        <div class="text-center"><button type="submit" name="submit" onclick="validates()">Make an Appointment</button></div>
+      </form>
+
+    </div>
+  </section><!-- End Appointment Section -->
+</body>
+  </html>
+{% endblock%}

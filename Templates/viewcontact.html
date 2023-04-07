@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+  <h2 class="text-center">Customer Contact us</h2>
+  <!-- <div class="table-responsive">
+    {% comment %} <div class="btn-group me-2">
+      <a href="/Medicine">
+        <button type="button">Add Medicine</button>
+      </a>
+    </div>  {% endcomment %} -->
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Address</th>
+          <th scope="col">Phone</th>
+          <!-- <th scope="col">Date</th> -->
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for detail in show %}
+          <tr>
+            <td>{{ detail.id }}</td>
+            <td>{{ detail.cus_username }}</td>
+            <td>{{ detail.email }}</td>
+            <td>{{ detail.address }}</td>
+            <td>{{ detail.phone }}</td>
+            <!-- <td>{{ detail.date }}</td> -->
+
+            <!-- {% comment %} <td>
+              <a href="{% url 'medicineupdate' detail.id %}" class="btn btn-warning btn-sm">
+                Update
+              </a>
+              <form action="{% url 'deletemedicine' detail.id %}" method="post" class="d-inline">{% csrf_token %}
+              <input type="submit" class="btn btn-danger" value="Delete">
+              </form>
+              <a href="{% url 'medicineupdate' detail.id %}" class="btn btn-success btn-sm">
+                Add to the cart
+              </a>
+            </td> {% endcomment %} -->
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</main>
+</div>
+</div>
+</div>
+
+    
+{% endblock %}

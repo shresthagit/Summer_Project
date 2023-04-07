@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>_________________________________________________________________</h1>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/app/css/style1.css">
+</head>
+  <body>
+
+  <form class="box" action="" method="POST">
+    {% csrf_token %}
+    <!-- <img class="mb-4" src="/static/app/img/abc.jpg" alt="" width="72" height="57"> -->
+    <h1>Please sign in</h1>
+
+    <input type="text" name="username" placeholder="Enter Username" id="username">
+    <input type="password" name="password" placeholder="Enter Password" id="password">
+    <input type="submit" name="submit" value="Login">
+
+    <br>
+    <h3>Don't Have a account?</h3>
+    <br><a class="link" href="/signup">Create New Account</a>
+
+    </form>
+</body>
+</html>
+
+
+{% endblock %}

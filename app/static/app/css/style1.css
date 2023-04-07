@@ -1,0 +1,89 @@
+body{
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(/static/app/img/15.jpg); 
+    background-size: cover;
+    color: white;
+
+}
+.box{
+    width: 300px;
+    padding: 30px;
+    position:relative;
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(20, 16, 16, 0.4);
+    text-align: center;
+}
+.box h1{
+    color: rgb(248, 239, 239);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.box input[type="text"],.box input[type="password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #82039b;
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: white;
+    border-radius:24px;
+    transition: 0.25px;
+}
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+    width: 270px;
+    border-color:#ffc400ec;
+}
+.box input[type="submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #ffc400ec;
+    padding: 14px 35px;
+    outline: none;
+    color: white;
+    border-radius:24px;
+    transition: 0.25px;
+    cursor: pointer;
+
+}
+
+.box input[type="submit"]:hover{
+    background: #ffc400ec;
+}
+
+.box input[placeholder="Enter Username"]{
+    background: #0e0e0dec;
+}
+
+.box input[placeholder="Enter Password"]{
+    background: #100e0bec;
+}
+
+.box h3{
+    color: rgb(255, 248, 248);
+    font-weight: 700;
+}
+.box input[placeholder="Enter Email"]{
+    background: #dddbd7ec;
+}
+
+.box input[type="submit"]:hover{
+    background: #ffc400ec;
+}
+a{
+    font-size: 20px;
+}
+
+.link{
+    background: #f3eff4;
+}

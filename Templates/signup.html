@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>_____________________________________________________________</h1>
+
+
+
+    <link rel="stylesheet" href="/static/app/css/style3.css">
+<form method="POST" class="box" action="{% url 'signup' %}">
+    
+    {% csrf_token %}
+       
+
+    <h1>Please sign Up</h1>
+
+            <input type="text" name="username" class="form-control" placeholder="Enter username" id="username" required="required">
+
+
+            <input type="text" name="fname" class="form-control" placeholder="Enter firstname" id="fname" required="required">
+
+
+            <input type="text" name="lname" class="form-control" placeholder="Enter lastname" id="lname" required="required">
+
+
+ 
+
+            <input type="email" name="email" class="form-control" placeholder="Enter Email" id="email" required="required"/>
+
+
+
+            <input type="password" name="password" class="form-control" placeholder="Enter Password" id="pssword" required="required"/>
+
+
+
+            <!-- <input type="password" name="cpassword" class="form-control" placeholder="Confirm Password" id="cpassword" required="required"/> -->
+
+
+
+
+            <input type="submit" value="Signup"><br>
+
+            <h4>Already have an Account?</h4>
+
+            <a href="/Login">Login</a>
+
+</form>
+{% endblock %}  

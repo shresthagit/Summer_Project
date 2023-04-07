@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+  <div class="container">
+    <h1 class="text-center"> Update  </h1>
+
+    
+
+ <form method="POST" action="" id="vali" onsubmit="return validatemedicine()" name="">
+    {% csrf_token %}
+  
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="Mediname" aria-describedby="emailHelp"  name="Mediname"  required value={{ medicine.medicinename }} >
+  </div>
+  <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Service</label>
+      <option value="">Select Services</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="Gynaecology">Gynaecology</option>
+              <option value="Othalmology">Othalmology</option>
+              <option value="Cancer Contultant">Cancer Contultant</option>
+              <option value="Gastro Contultant">Gastro Contultant</option>
+              <option value="Surgery Contultant">Surgery Contultant</option>
+              <option value="Orthopaedic">Orthopaedic</option>
+              <option value="Surgery">Surgery</option>
+              
+            </select>
+      <input type="text" class="form-control" id="cprice" aria-describedby="emailHelp"  name="cprice"  required  value={{ medicine.costprice }} >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Time</label>
+      <input type="text" class="form-control" id="sprice" aria-describedby="emailHelp"  name="sprice"  required value={{ medicine.sellingprice }} >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Date</label>
+      <input type="text" class="form-control" id="MedcoName" aria-describedby="emailHelp"  name="MedcoName"  required  value={{ medicine.medicinecompanyname }} >
+    </div>
+    <!-- <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Messag</label>
+      <input type="text" class="form-control" id="MedcoName" aria-describedby="emailHelp"  name="MedcoName"  required  value={{ medicine.medicinecompanyname }} >
+    </div> -->
+    <a href="/home">
+  <button type="submit" value="submit" class="btn btn-primary" name="submit">Update</button>
+</a>
+</form>
+</div>
+  
+{% endblock body %}

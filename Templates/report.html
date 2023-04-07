@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact</title>
+        <link rel="stylesheet" href="/static/app/css/style1.css">
+    
+    </head>
+<body>
+<div class="container">
+    <div class="container">
+    <h1 class="text-center">Patient Report</h1></div>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <div class="mb-3">
+            <label for="name" class="form-label">Patient Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" name="address">
+        </div>
+        <div> 
+            <label for="contact" class="form-label">Contact No:</label>
+            <input type="number" class="form-control" id="contact" name="contact">
+
+        </div>
+        <div class="mb-3">
+            <label for="doctor" class="form-label">Doctor Name</label>
+            <input type="text" class="form-control" id="doctor" name="doctor">
+        </div>
+        <div class="mb-3">
+            <label for="detail" class="form-label">Detail of Patient</label>
+            <input type="text" class="form-control" id="detail" name="detail">
+        </div>
+        <div class="mb-3">
+          <label for="treatment" class="form-label">Treatment of Patient</label>
+          <input type="text" class="form-control" id="treatment" name="treatment">
+      </div>
+      <div class="mb-3">
+        <label for="recommendation" class="form-label">Recommendation</label>
+        <input type="text" class="form-control" id="recommendation" name="recommendation">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</body>
+</html>
+{% endblock %}  
